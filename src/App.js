@@ -4,6 +4,20 @@ import data from './data.js'
 import { useState } from 'react';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom'
 import Detail from './routes/Detail.js'
+
+class Detatil2 extends React.Component{
+  componentDidMount(){
+    //컴포넌트 mount시 여기 코드 실행됨
+  }
+  componentDidUpdate(){
+    //컴포넌트 update시 여기 코드 실행됨
+  }
+  componentWillUnmount(){
+    //컴포넌트 unmount시 여기 코드 실행됨
+  }
+
+}
+
 function App() {
 
   let [shoes,setShoes] = useState(data);

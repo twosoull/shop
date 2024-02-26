@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from 'styled-components';
 
@@ -7,20 +8,31 @@ let YellowBtn = styled.button`
   padding : 10px;
 `
 
-let NewBtn = styled.button(YellowBtn)` 복사해버리기
-  스타일 넣어서 커스텀마이징 가능
-`
-
 function Detail(props){
+  //mount, update시 코드 실행해주는 useEffect
+  //이곳에 적은 코드는 랜더링이 된 뒤에 작동한다.
 
+  //let [alert,setAlert] = useState(true);
+  let[count , setCount] = useState(0);
   let {id} = useParams();
+  let [num,setNum] = useState();
+  useEffect(()=>{
+    return() =>{
+      if(isNaN(num) == true){
+        alert('ss');
+      }
 
-  console.log(id);
+    }
+  },[num]); //count가 변경될 때 작동한다 //시작 될 때에도 작동한다. []로 표시하면 1번만 실행된다.
+
+
 
     return (
       <div className="container">
-        <YellowBtn bg="blue">버튼</YellowBtn>
-        <YellowBtn bg="orange">버튼</YellowBtn>
+
+        <input onChange={(e)=>{ setNum(e.target.value) }} type="text" />
+        {count}
+        <button onClick={()=>{setCount(count + 1)}} >버튼</button>
         <div className="row">
           <div className="col-md-6">
             <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
