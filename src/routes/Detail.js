@@ -10,10 +10,10 @@ let YellowBtn = styled.button`
 
 function Detail(props){
   //mount, update시 코드 실행해주는 useEffect
-  //이곳에 적은 코드는 랜더링이 된 뒤에 작동한다.
+  ////이곳에 적은 코드는 랜더링이 된 뒤에 작동한다.
 
   //let [alert,setAlert] = useState(true);
-  let[count , setCount] = useState(0);
+  let[count , setCount] = useState(1);
   let {id} = useParams();
   let [num,setNum] = useState();
   useEffect(()=>{
